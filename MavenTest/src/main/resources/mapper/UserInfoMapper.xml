@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserInfoMapper">
+    <select id="selectAllUserInfo" resultType="com.wwl.dao.bean.UserInfo">
+        SELECT id, name, sex, birthday, address,phone FROM testdb.userinfo;
+    </select>
+
+    <select id="selectUserInfo" parameterType="int" resultType="com.wwl.dao.bean.UserInfo">
+        SELECT Id, name, sex, birthday, address,phone FROM testdb.userinfo WHERE id =#{id};
+    </select>
+
+    <insert id="insertUserInfo" parameterType="com.wwl.dao.bean.UserInfo">
+        INSERT INTO testdb.userinfo(name, sex, birthday, address,phone ) VALUES(#{name}, #{sex}, #{birthday}, #{address},#{phone});
+    </insert>
+
+    <update id="updateUserInfo" parameterType="com.wwl.dao.bean.UserInfo">
+        UPDATE testdb.userinfo SET name=#{name}, sex=#{sex}, birthday=#{birthday}, address= #{address}, phone=#{phone} WHERE id=#{id};
+    </update>
+
+    <delete id="deleteUserInfo" parameterType="int" >
+        DELETE FROM testdb.userinfo WHERE Id=#{id};
+    </delete>
+</mapper>
