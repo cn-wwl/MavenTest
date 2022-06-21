@@ -37,7 +37,7 @@
       <!--就需要在他的pom文件中新建一个dependency节点，将本项目的groupId、artifactId、version写入， maven就会把你上传的jar包下载到他的本地 -->
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.38</version>
+      <version>8.0.28</version>
     </dependency>
 
     <dependency>
